@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rover_gazebo</name>
+  <version>0.0.0</version>
+  <description>The rover_gazebo package</description>
+  
+  <maintainer email="carlos348@outlook.com">Carlos Soto Pérez</maintainer>
+  <license>GPLv3</license>
+  <url type="website">https://github.com/CarlosSoPe6/ITESORover</url>
+  <author email="carlos348@outlook.com">Carlos Soto Pérez</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>gazebo</depend>
+  <depend>gazebo_plugins</depend>
+  <depend>gazebo_ros</depend>
+  <depend>gazebo_ros_control</depend>
+  <depend>tf</depend>
+  <depend>urdf</depend>
+
+  <export>
+    <!-- Empty -->
+  </export>
+</package>
