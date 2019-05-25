@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rover_description</name>
+  <version>0.0.0</version>
+  <description>The rover_description package</description>
+
+  <maintainer email="carlos348@outlook.com">Carlos Soto Pérez</maintainer>
+  <license>GPLv3</license>
+  <url type="website">https://github.com/CarlosSoPe6/ITESORover</url>
+  <author email="carlos348@outlook.com">Carlos Soto Pérez</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>joint_state_publisher</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+
+  <export>
+    <!-- Empty -->
+  </export>
+</package>
