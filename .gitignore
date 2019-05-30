@@ -4,6 +4,8 @@ devel/
 logs/
 build/
 install/
+.catkin_workspace
+*/src/CMakeLists.txt
 
 ### VSCode ###
 .vscode/*
