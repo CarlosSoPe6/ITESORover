@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot name="suspension_right" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:macro name="suspension_rigth" params="">
+    <xacro:macro name="suspension_right" params="">
     
         <joint name="suspension_rigth_tree_root_joint" type="continuous">
             <origin xyz="${rocker_right_offset}" rpy="0.0 0.0 0.0"/>
@@ -10,8 +10,8 @@
         </joint>
         <link name="rocker_right_link">
             <inertial>
-                <origin xyz="${rocker_left_mass_center_xyz}" rpy="0.0 0.0 0.0"/>
-                <mass value="${rocker_left_mass}"/>
+                <origin xyz="${rocker_right_mass_center_xyz}" rpy="0.0 0.0 0.0"/>
+                <mass value="${rocker_right_mass}"/>
                 <inertia    ixx="0.0077"    ixy="-0.0005"   ixz="0.0022" 
                                             iyy="0.0098"    iyz="-0.0003"
                                                             izz="0.0015"/>
@@ -25,23 +25,23 @@
                 </material>
             </visual>
             <collision>
-                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 ${-PI/2}"/>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
                     <mesh filename="package://rover_description/meshes/MirrorRocker.STL" scale="${SCALE_XYZ}"/>
                 </geometry>
             </collision>
         </link>
-        <!--
+
         <joint name="rocker_bogie_right" type="continuous">
-            <origin xyz="${bogie_pivot_left_offset}" rpy="0.0 0.0 0.0"/>
-            <parent link="rocker_left_link"/>
+            <origin xyz="${bogie_pivot_right_offset}" rpy="0.0 0.0 0.0"/>
+            <parent link="rocker_right_link"/>
             <child link="bogie_pivot_right_link"/>
             <axis xyz="1.0 0.0 0.0"/>
         </joint>
         <link name="bogie_pivot_right_link">
             <inertial>
-                <origin xyz="${bogie_pivot_left_mass_center_xyz}" rpy="0.0 0.0 0.0"/>
-                <mass value="${bogie_pivot_left_mass}"/>
+                <origin xyz="${bogie_pivot_right_mass_center_xyz}" rpy="0.0 0.0 0.0"/>
+                <mass value="${bogie_pivot_right_mass}"/>
                 <inertia    ixx="0.0684"    ixy="0.0038"    ixz="0.0" 
                                             iyy="0.0572"    iyz="-0.0028" 
                                                             izz="0.0425"/>
@@ -49,7 +49,7 @@
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <mesh filename="package://rover_description/meshes/Bogie_pivot.STL" scale="${SCALE_XYZ}"/>
+                    <mesh filename="package://rover_description/meshes/MirrorBogie_pivot.STL" scale="${SCALE_XYZ}"/>
                 </geometry>
                 <material name="white">
                 </material>
@@ -57,11 +57,94 @@
             <collision>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
                 <geometry>
-                    <mesh filename="package://rover_description/meshes/Bogie_pivot.STL" scale="${SCALE_XYZ}"/>
+                    <mesh filename="package://rover_description/meshes/MirrorBogie_pivot.STL" scale="${SCALE_XYZ}"/>
                 </geometry>
             </collision>
         </link>
-        -->
+
+        <joint name="bogie_drive_right_3" type="continuous">
+            <origin xyz="${drive_module_right_3_offset}" rpy="0.0 0.0 0.0"/>
+            <parent link="rocker_right_link"/>
+            <child link="drive_module_right_3_link"/>
+            <axis xyz="0.0 0.0 1.0"/>
+        </joint>
+        <link name="drive_module_right_3_link">
+            <inertial>
+                <origin xyz="${drive_module_right_mass_center_xyz}" rpy="${drive_module_right_rpy}"/>
+                <mass value="${drive_module_right_mass}"/>
+                <inertia    ixx="0.0102"    ixy="0.0001"    ixz="0.0" 
+                                            iyy="0.0063"    iyz="-0.0018" 
+                                                            izz="0.0049"/>
+            </inertial>
+            <visual name="">
+                <origin xyz="${drive_module_right_3_origin}" rpy="${drive_module_right_rpy}"/>
+                <geometry>
+                    <mesh filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL" scale="${SCALE_XYZ}"/>
+                </geometry>
+                <material name="white">
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="${drive_module_right_3_origin}" rpy="${drive_module_right_rpy}"/>
+                <geometry>
+                    <mesh filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL" scale="${SCALE_XYZ}"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="bogie_drive_right_4" type="continuous">
+            <origin xyz="${drive_module_right_4_offset}" rpy="0.0 0.0 0.0"/>
+            <parent link="bogie_pivot_right_link"/>
+            <child link="drive_module_right_4_link"/>
+            <axis xyz="0.0 0.0 1.0"/>
+        </joint>
+        <link name="drive_module_right_4_link">
+            <inertial>
+                <origin xyz="${drive_module_right_mass_center_xyz}" rpy="${drive_module_right_rpy}"/>
+                <mass value="${drive_module_right_mass}"/>
+                <inertia    ixx="0.0102"    ixy="0.0001"    ixz="0.0" 
+                                            iyy="0.0063"    iyz="-0.0018" 
+                                                            izz="0.0049"/>
+            </inertial>
+            <visual name="">
+                <origin xyz="${drive_module_right_3_origin}" rpy="${drive_module_right_rpy}"/>
+                <geometry>
+                    <mesh filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL" scale="${SCALE_XYZ}"/>
+                </geometry>
+                <material name="white">
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="${drive_module_right_3_origin}" rpy="${drive_module_right_rpy}"/>
+                <geometry>
+                    <mesh filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL" scale="${SCALE_XYZ}"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="wheel_4_joint" type="continuous">
+            <origin xyz="${wheel_left_4_offset}" rpy="${wheel_right_rpy}"/>
+            <parent link="drive_module_right_3_link"/>
+            <child link="bogie_4_wheel"/>
+            <axis xyz="1.0 0.0 0.0"/>
+        </joint>
+        <wheel prefix="bogie_4" />
+        
+        <joint name="wheel_5_joint" type="continuous">
+            <origin xyz="${wheel_left_5_offset}" rpy="${wheel_right_rpy}"/>
+            <parent link="bogie_pivot_right_link"/>
+            <child link="bogie_5_wheel"/>
+            <axis xyz="1.0 0.0 0.0"/>
+        </joint>
+        <wheel prefix="bogie_5" />
+        
+        <joint name="wheel_6_joint" type="continuous">
+            <origin xyz="${wheel_left_6_offset}" rpy="${wheel_right_rpy}"/>
+            <parent link="drive_module_right_4_link"/>
+            <child link="bogie_6_wheel"/>
+            <axis xyz="1.0 0.0 0.0"/>
+        </joint>
+        <wheel prefix="bogie_6" />
 
     </xacro:macro>
 </robot>
