@@ -10,7 +10,7 @@
 
     <arg name="x" default="0.0" />
     <arg name="y" default="0.0" />
-    <arg name="z" default="-5.0" />
+    <arg name="z" default="-6.0" />
     <arg name="roll" default="0.0"/>
     <arg name="pitch" default="0.0"/>
     <arg name="yaw" default="0.0" />
@@ -26,7 +26,7 @@
                 -P $(arg pitch) 
                 -Y $(arg yaw) 
                 -urdf 
-                -model rrobot 
+                -model iteso_rover 
                 -param robot_description" 
         respawn="false" output="screen" />
 </launch>
