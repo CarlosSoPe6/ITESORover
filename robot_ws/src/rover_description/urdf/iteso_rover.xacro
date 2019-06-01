@@ -10,7 +10,9 @@
     <xacro:include filename="$(find rover_description)/urdf/suspension_right.xacro" />
     <!-- Wheel -->
     <xacro:include filename="$(find rover_description)/urdf/wheel.xacro" />
-
+    <!-- Module Steerable -->
+    <xacro:include filename="$(find rover_description)/urdf/drive_module_steerable.xacro"/>
+    
     <!-- Macros calls -->
     <chassis />
     <suspension_left />

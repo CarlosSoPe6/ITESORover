@@ -68,29 +68,14 @@
             <child link="drive_module_left_1_link"/>
             <axis xyz="0.0 0.0 1.0"/>
         </joint>
-        <link name="drive_module_left_1_link">
-            <inertial>
-                <origin xyz="${drive_module_left_mass_center_xyz}" rpy="${drive_module_left_rpy}"/>
-                <mass value="${drive_module_left_mass}"/>
-                <inertia    ixx="0.0102"    ixy="0.0001"    ixz="0.0" 
-                                            iyy="0.0063"    iyz="-0.0018" 
-                                                            izz="0.0049"/>
-            </inertial>
-            <visual name="">
-                <origin xyz="${drive_module_left_1_origin}" rpy="${drive_module_left_rpy}"/>
-                <geometry>
-                    <mesh filename="package://rover_description/meshes/Drive Module_steerable.STL" scale="${SCALE_XYZ}"/>
-                </geometry>
-                <material name="white">
-                </material>
-            </visual>
-            <collision>
-                <origin xyz="${drive_module_left_1_origin}" rpy="${drive_module_left_rpy}"/>
-                <geometry>
-                    <mesh filename="package://rover_description/meshes/Drive Module_steerable.STL" scale="${SCALE_XYZ}"/>
-                </geometry>
-            </collision>
-        </link>
+        <module_steerable 
+            name="drive_module_left_1_link"
+            mass="${drive_module_left_mass}"
+            mass_center="${drive_module_left_mass_center_xyz}"
+            origin_xyz="${drive_module_left_1_origin}"
+            origin_rpy="${drive_module_left_rpy}"
+            mesh_filename="package://rover_description/meshes/Drive Module_steerable.STL"
+        />
 
         <joint name="bogie_drive_left_2" type="continuous">
             <origin xyz="${drive_module_left_2_offset}" rpy="0.0 0.0 0.0"/>
@@ -98,29 +83,14 @@
             <child link="drive_module_left_2_link"/>
             <axis xyz="0.0 0.0 1.0"/>
         </joint>
-        <link name="drive_module_left_2_link">
-            <inertial>
-                <origin xyz="${drive_module_left_mass_center_xyz}" rpy="${drive_module_left_rpy}"/>
-                <mass value="${drive_module_left_mass}"/>
-                <inertia    ixx="0.0102"    ixy="0.0001"    ixz="0.0" 
-                                            iyy="0.0063"    iyz="-0.0018" 
-                                                            izz="0.0049"/>
-            </inertial>
-            <visual name="">
-                <origin xyz="${drive_module_left_2_origin}" rpy="${drive_module_left_rpy}"/>
-                <geometry>
-                    <mesh filename="package://rover_description/meshes/Drive Module_steerable.STL" scale="${SCALE_XYZ}"/>
-                </geometry>
-                <material name="white">
-                </material>
-            </visual>
-            <collision>
-                <origin xyz="${drive_module_left_2_origin}" rpy="${drive_module_left_rpy}"/>
-                <geometry>
-                    <mesh filename="package://rover_description/meshes/Drive Module_steerable.STL" scale="${SCALE_XYZ}"/>
-                </geometry>
-            </collision>
-        </link>
+        <module_steerable 
+            name="drive_module_left_2_link"
+            mass="${drive_module_left_mass}"
+            mass_center="${drive_module_left_mass_center_xyz}"
+            origin_xyz="${drive_module_left_2_origin}"
+            origin_rpy="${drive_module_left_rpy}"
+            mesh_filename="package://rover_description/meshes/Drive Module_steerable.STL"
+        />
 
         <joint name="wheel_1_joint" type="continuous">
             <origin xyz="${wheel_left_1_offset}" rpy="${wheel_left_rpy}"/>

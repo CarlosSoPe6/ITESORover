@@ -53,9 +53,9 @@
     <xacro:property name="wheel_left_3_offset" value="0.03974 0.0 0.0" />
     <!-- Wheel right -->
     <xacro:property name="wheel_right_rpy" value="0.0 0.0 ${PI}" />
-    <xacro:property name="wheel_left_4_offset" value="-0.03974 0.0 0.0" />
-    <xacro:property name="wheel_left_5_offset" value="-0.1185 -0.10696 -0.09649" />
-    <xacro:property name="wheel_left_6_offset" value="-0.03974 0.0 0.0" />
+    <xacro:property name="wheel_right_4_offset" value="-0.03974 0.0 0.0" />
+    <xacro:property name="wheel_right_5_offset" value="-0.1185 -0.10696 -0.09649" />
+    <xacro:property name="wheel_right_6_offset" value="-0.03974 0.0 0.0" />
 
     <!-- Materials -->
     <material name="white">

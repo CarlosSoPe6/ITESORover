@@ -68,29 +68,14 @@
             <child link="drive_module_right_3_link"/>
             <axis xyz="0.0 0.0 1.0"/>
         </joint>
-        <link name="drive_module_right_3_link">
-            <inertial>
-                <origin xyz="${drive_module_right_mass_center_xyz}" rpy="${drive_module_right_rpy}"/>
-                <mass value="${drive_module_right_mass}"/>
-                <inertia    ixx="0.0102"    ixy="0.0001"    ixz="0.0" 
-                                            iyy="0.0063"    iyz="-0.0018" 
-                                                            izz="0.0049"/>
-            </inertial>
-            <visual name="">
-                <origin xyz="${drive_module_right_3_origin}" rpy="${drive_module_right_rpy}"/>
-                <geometry>
-                    <mesh filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL" scale="${SCALE_XYZ}"/>
-                </geometry>
-                <material name="white">
-                </material>
-            </visual>
-            <collision>
-                <origin xyz="${drive_module_right_3_origin}" rpy="${drive_module_right_rpy}"/>
-                <geometry>
-                    <mesh filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL" scale="${SCALE_XYZ}"/>
-                </geometry>
-            </collision>
-        </link>
+        <module_steerable 
+            name="drive_module_right_3_link"
+            mass="${drive_module_right_mass}"
+            mass_center="${drive_module_right_mass_center_xyz}"
+            origin_xyz="${drive_module_right_4_origin}"
+            origin_rpy="${drive_module_right_rpy}"
+            mesh_filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL"
+        />
 
         <joint name="bogie_drive_right_4" type="continuous">
             <origin xyz="${drive_module_right_4_offset}" rpy="0.0 0.0 0.0"/>
@@ -98,32 +83,17 @@
             <child link="drive_module_right_4_link"/>
             <axis xyz="0.0 0.0 1.0"/>
         </joint>
-        <link name="drive_module_right_4_link">
-            <inertial>
-                <origin xyz="${drive_module_right_mass_center_xyz}" rpy="${drive_module_right_rpy}"/>
-                <mass value="${drive_module_right_mass}"/>
-                <inertia    ixx="0.0102"    ixy="0.0001"    ixz="0.0" 
-                                            iyy="0.0063"    iyz="-0.0018" 
-                                                            izz="0.0049"/>
-            </inertial>
-            <visual name="">
-                <origin xyz="${drive_module_right_3_origin}" rpy="${drive_module_right_rpy}"/>
-                <geometry>
-                    <mesh filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL" scale="${SCALE_XYZ}"/>
-                </geometry>
-                <material name="white">
-                </material>
-            </visual>
-            <collision>
-                <origin xyz="${drive_module_right_3_origin}" rpy="${drive_module_right_rpy}"/>
-                <geometry>
-                    <mesh filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL" scale="${SCALE_XYZ}"/>
-                </geometry>
-            </collision>
-        </link>
+        <module_steerable 
+            name="drive_module_right_4_link"
+            mass="${drive_module_right_mass}"
+            mass_center="${drive_module_right_mass_center_xyz}"
+            origin_xyz="${drive_module_right_4_origin}"
+            origin_rpy="${drive_module_right_rpy}"
+            mesh_filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL"
+        />
 
         <joint name="wheel_4_joint" type="continuous">
-            <origin xyz="${wheel_left_4_offset}" rpy="${wheel_right_rpy}"/>
+            <origin xyz="${wheel_right_4_offset}" rpy="${wheel_right_rpy}"/>
             <parent link="drive_module_right_3_link"/>
             <child link="bogie_4_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
@@ -131,7 +101,7 @@
         <wheel prefix="bogie_4" />
         
         <joint name="wheel_5_joint" type="continuous">
-            <origin xyz="${wheel_left_5_offset}" rpy="${wheel_right_rpy}"/>
+            <origin xyz="${wheel_right_5_offset}" rpy="${wheel_right_rpy}"/>
             <parent link="bogie_pivot_right_link"/>
             <child link="bogie_5_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
@@ -139,7 +109,7 @@
         <wheel prefix="bogie_5" />
         
         <joint name="wheel_6_joint" type="continuous">
-            <origin xyz="${wheel_left_6_offset}" rpy="${wheel_right_rpy}"/>
+            <origin xyz="${wheel_right_6_offset}" rpy="${wheel_right_rpy}"/>
             <parent link="drive_module_right_4_link"/>
             <child link="bogie_6_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
