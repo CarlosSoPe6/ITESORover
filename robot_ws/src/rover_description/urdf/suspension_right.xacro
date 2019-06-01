@@ -37,6 +37,7 @@
             <parent link="rocker_right_link"/>
             <child link="bogie_pivot_right_link"/>
             <axis xyz="1.0 0.0 0.0"/>
+            <dynamics damping="0.0" friction="0.0"/>
         </joint>
         <link name="bogie_pivot_right_link">
             <inertial>
@@ -67,6 +68,7 @@
             <parent link="rocker_right_link"/>
             <child link="drive_module_right_3_link"/>
             <axis xyz="0.0 0.0 1.0"/>
+            <dynamics damping="0.0" friction="0.0"/>
         </joint>
         <module_steerable 
             name="drive_module_right_3_link"
@@ -82,6 +84,7 @@
             <parent link="bogie_pivot_right_link"/>
             <child link="drive_module_right_4_link"/>
             <axis xyz="0.0 0.0 1.0"/>
+            <dynamics damping="0.0" friction="0.0"/>
         </joint>
         <module_steerable 
             name="drive_module_right_4_link"
@@ -97,6 +100,7 @@
             <parent link="drive_module_right_3_link"/>
             <child link="bogie_4_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
+            <dynamics damping="0.5" friction="0.01"/>
         </joint>
         <wheel prefix="bogie_4" />
         
@@ -105,6 +109,7 @@
             <parent link="bogie_pivot_right_link"/>
             <child link="bogie_5_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
+            <dynamics damping="0.5" friction="0.01"/>
         </joint>
         <wheel prefix="bogie_5" />
         
@@ -113,6 +118,7 @@
             <parent link="drive_module_right_4_link"/>
             <child link="bogie_6_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
+            <dynamics damping="0.5" friction="0.01"/>
         </joint>
         <wheel prefix="bogie_6" />
 
