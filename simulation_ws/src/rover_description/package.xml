@@ -10,7 +10,6 @@
   <author email="carlos348@outlook.com">Carlos Soto Pérez</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <depend>ros_control</depend>
   <depend>joint_state_publisher</depend>
   <depend>robot_state_publisher</depend>
   <depend>rviz</depend>
