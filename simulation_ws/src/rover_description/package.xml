@@ -17,6 +17,7 @@
   <depend>xacro</depend>
 
   <export>
-    <!-- Empty -->
+    <gazebo_ros gazebo_model_path="${prefix}/.." />
+    <gazebo_ros plugin_path="${prefix}/.." />
   </export>
 </package>
