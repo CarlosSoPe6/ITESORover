@@ -5,4 +5,86 @@
       <robotNamespace>/iteso_rover</robotNamespace>
     </plugin>
   </gazebo>
+
+  <!-- Chasis -->
+  <gazebo reference="chasis_joint">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <!-- Left suspenstion tree -->
+  <gazebo reference="rocker_left_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_pivot_left_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="drive_module_left_1_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="drive_module_left_2_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_1_wheel">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_2_wheel">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_3_wheel">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <!-- Right suspenstion tree -->
+  <gazebo reference="rocker_right_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_pivot_right_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="drive_module_right_3_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="drive_module_right_4_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_4_wheel">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_5_wheel">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_3_wheel">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
 </robot>

@@ -1,2 +1,26 @@
 <?xml version="1.0"?>
-<launch></launch>
+<launch>
+    <rosparam file="$(find rover_description)/config/control.yaml" command="load"/>
+    <!-- load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        output="screen" ns="/iteso_rover" args="joint_state_controller
+                                        rocker_bogie_left_controler
+                                        rocker_bogie_right_controler
+                                        wheel_1_controller
+                                        wheel_2_controller
+                                        wheel_3_controller
+                                        wheel_4_controller
+                                        wheel_5_controller
+                                        wheel_6_controller
+                                        drive_steering_1_controller
+                                        drive_steering_2_controller
+                                        drive_steering_3_controller
+                                        drive_steering_4_controller"/>
+
+    <!-- convert joint states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+
+        <remap from="/joint_states" to="/iteso_rover/joint_states" />
+    </node>
+</launch>

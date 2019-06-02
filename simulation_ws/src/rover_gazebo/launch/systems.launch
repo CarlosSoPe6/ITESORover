@@ -1,2 +1,6 @@
 <?xml version="1.0"?>
-<launch></launch>
+<launch>
+
+    <include file="$(find rover_description)/launch/control.launch" />
+
+</launch>

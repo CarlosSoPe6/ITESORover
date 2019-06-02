@@ -29,4 +29,6 @@
                 -model iteso_rover 
                 -param robot_description" 
         respawn="false" output="screen" />
+
+	<node name="rviz" pkg="rviz" type="rviz"/>
 </launch>
