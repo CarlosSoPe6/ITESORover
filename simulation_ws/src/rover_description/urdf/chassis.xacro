@@ -14,9 +14,12 @@
             <inertial>
                 <origin xyz="${chassis_mass_center_xyz}" rpy="0.0 0.0 0.0"/>
                 <mass value="${chassis_mass}"/>
-                <inertia    ixx="0.0860"    ixy="-0.0008"   ixz="-0.0003" 
-                                            iyy="0.0483"    iyz="-0.0099" 
-                                                            izz="0.0994"/>
+                <inertia    ixx="${chassis_mass * 0.0860}"    
+                            ixy="${chassis_mass * -0.0008}"   
+                            ixz="${chassis_mass * -0.0003}" 
+                            iyy="${chassis_mass * 0.0483}"    
+                            iyz="${chassis_mass * -0.0099}" 
+                            izz="${chassis_mass * 0.0994}"/>
             </inertial>
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>

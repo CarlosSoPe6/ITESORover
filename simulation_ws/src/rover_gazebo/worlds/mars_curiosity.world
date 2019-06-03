@@ -10,7 +10,7 @@
     </include>
 
     <include>
-      <uri>model://rover_gazebo/models/curiosity_path</uri>
+      <uri>model://curiosity_path</uri>
       <name>curiosity_path</name>
       <pose>0 0 0 0 0 0</pose>
     </include>

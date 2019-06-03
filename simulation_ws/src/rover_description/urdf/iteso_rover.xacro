@@ -13,12 +13,12 @@
     <!-- Module Steerable -->
     <xacro:include filename="$(find rover_description)/urdf/drive_module_steerable.xacro"/>
 
-    <!-- Gazebo aspects of the robot -->
-    <xacro:include filename="$(find rover_description)/urdf/iteso_rover.xml"/>
-
     <!-- Macros calls -->
     <chassis />
     <suspension_left />
     <suspension_right />
+
+    <!-- Gazebo aspects of the robot -->
+    <xacro:include filename="$(find rover_description)/urdf/iteso_rover.xml"/>
 
 </robot>

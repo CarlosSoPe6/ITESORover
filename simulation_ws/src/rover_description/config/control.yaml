@@ -2,58 +2,58 @@ iteso_rover:
   # Publisher
   joint_state_controller:
     type: joint_state_controller/JointStateController
-    publish_rate: 60
+    publish_rate: 30
   
   # Rocker bogie controlers
   rocker_bogie_left_controler:
     type: effort_controllers/JointPositionController
     joint: rocker_bogie_left_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
   rocker_bogie_right_controler:
     type: effort_controllers/JointPositionController
     joint: rocker_bogie_right_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
 
   # Wheel velocity controlers
   wheel_1_controller:
     type: effort_controllers/JointVelocityController
     joint: wheel_1_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
   wheel_2_controller:
     type: effort_controllers/JointVelocityController
     joint: wheel_2_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
   wheel_3_controller:
     type: effort_controllers/JointVelocityController
     joint: wheel_3_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
   wheel_4_controller:
     type: effort_controllers/JointVelocityController
     joint: wheel_4_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
   wheel_5_controller:
     type: effort_controllers/JointVelocityController
     joint: wheel_5_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
   wheel_6_controller:
     type: effort_controllers/JointVelocityController
     joint: wheel_6_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
 
   # Wheel Steering Position Controllers
   drive_steering_1_controller:
     type: effort_controllers/JointPositionController
     joint: bogie_drive_1_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
   drive_steering_2_controller:
     type: effort_controllers/JointPositionController
     joint: bogie_drive_2_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
   drive_steering_3_controller:
     type: effort_controllers/JointPositionController
     joint: bogie_drive_3_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
   drive_steering_4_controller:
     type: effort_controllers/JointPositionController
     joint: bogie_drive_4_joint
-    pid: {p: 0.0, i: 0.0, d: 0.0, i_clamp: 0.0} 
+    pid: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0} 

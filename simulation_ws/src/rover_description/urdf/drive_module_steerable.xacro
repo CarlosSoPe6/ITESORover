@@ -6,9 +6,12 @@
             <inertial>
                 <origin xyz="${mass_center}" rpy="${origin_rpy}"/>
                 <mass value="${mass}"/>
-                <inertia    ixx="0.0102"    ixy="0.0001"    ixz="0.0" 
-                                            iyy="0.0063"    iyz="-0.0018" 
-                                                            izz="0.0049"/>
+                <inertia    ixx="${mass * 0.0107}"
+                            ixy="${mass * 0.0003}"    
+                            ixz="${mass * -0.0003}" 
+                            iyy="${mass * 0.0070}"    
+                            iyz="${mass * -0.0020}" 
+                            izz="${mass * 0.0054}"/>
             </inertial>
             <visual name="">
                 <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
