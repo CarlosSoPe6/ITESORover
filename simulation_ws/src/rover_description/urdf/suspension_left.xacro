@@ -40,8 +40,8 @@
             <parent link="rocker_left_link"/>
             <child link="bogie_pivot_left_link"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.1" friction="0.05"/>
-            <limit effort="100" velocity="100" />
+            <dynamics damping="0.01" friction="0.0"/>
+            <limit effort="30" velocity="100" />
         </joint>
         <link name="bogie_pivot_left_link">
             <inertial>
@@ -85,8 +85,8 @@
             <parent link="rocker_left_link"/>
             <child link="drive_module_left_1_link"/>
             <axis xyz="0.0 0.0 1.0"/>
-            <dynamics damping="0.1" friction="0.05"/>
-            <limit effort="100" velocity="100" />
+            <dynamics damping="0.01" friction="0.0"/>
+            <limit effort="30" velocity="100" />
         </joint>
         <module_steerable 
             name="drive_module_left_1_link"
@@ -112,8 +112,8 @@
             <parent link="bogie_pivot_left_link"/>
             <child link="drive_module_left_2_link"/>
             <axis xyz="0.0 0.0 1.0"/>
-            <dynamics damping="0.1" friction="0.05"/>
-            <limit effort="100" velocity="100" />
+            <dynamics damping="0.01" friction="0.0"/>
+            <limit effort="30" velocity="100" />
         </joint>
         <module_steerable 
             name="drive_module_left_2_link"
@@ -139,8 +139,8 @@
             <parent link="drive_module_left_1_link"/>
             <child link="bogie_1_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.1" friction="0.05"/>
-            <limit effort="100" velocity="100" />
+            <dynamics damping="0.01" friction="0.0"/>
+            <limit effort="30" velocity="100" />
         </joint>
         <wheel prefix="bogie_1" />
         <transmission name="wheel_1_trans">
@@ -159,8 +159,8 @@
             <parent link="bogie_pivot_left_link"/>
             <child link="bogie_2_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.1" friction="0.05"/>
-            <limit effort="100" velocity="100" />
+            <dynamics damping="0.01" friction="0.0"/>
+            <limit effort="30" velocity="100" />
         </joint>
         <wheel prefix="bogie_2" />
         <transmission name="wheel_2_trans">
@@ -179,8 +179,8 @@
             <parent link="drive_module_left_2_link"/>
             <child link="bogie_3_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.1" friction="0.05"/>
-            <limit effort="100" velocity="100" />
+            <dynamics damping="0.01" friction="0.0"/>
+            <limit effort="30" velocity="100" />
         </joint>
         <wheel prefix="bogie_3" />
         <transmission name="wheel_3_trans">
