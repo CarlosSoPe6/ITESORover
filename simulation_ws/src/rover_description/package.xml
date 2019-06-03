@@ -10,13 +10,14 @@
   <author email="carlos348@outlook.com">Carlos Soto Pérez</author>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <depend>joint_state_publisher</depend>
-  <depend>robot_state_publisher</depend>
-  <depend>rviz</depend>
-  <depend>urdf</depend>
-  <depend>xacro</depend>
-  <depend>ros_control</depend>
-  <depend>ros_controllers</depend>
+  
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>ros_control</exec_depend>
+  <exec_depend>ros_controllers</exec_depend>
 
   <export>
     <gazebo_ros gazebo_model_path="${prefix}/.." />
