@@ -10,10 +10,13 @@
   <author email="carlos348@outlook.com">Carlos Soto Pérez</author>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <depend>gazebo_ros</depend>
   <depend>gazebo</depend>
   <depend>gazebo_plugins</depend>
-  <depend>gazebo_ros</depend>
   <depend>gazebo_ros_control</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>ros_control</depend>
+  <depend>ros_controllers</depend>
   <depend>tf</depend>
   <depend>urdf</depend>
 
