@@ -3,4 +3,6 @@
 
     <include file="$(find rover_description)/launch/control.launch" />
 
+    <node pkg="rover_systems" name="WheelsControler" type="WheelsControler.py" output="screen"/>
+
 </launch>

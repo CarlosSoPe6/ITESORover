@@ -139,7 +139,7 @@
             <parent link="drive_module_right_3_link"/>
             <child link="bogie_4_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.01" friction="0.0"/>
+            <dynamics damping="0.01" friction="0.1"/>
             <limit effort="30" velocity="100" />
         </joint>
         <wheel prefix="bogie_4" />
@@ -159,7 +159,7 @@
             <parent link="bogie_pivot_right_link"/>
             <child link="bogie_5_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.01" friction="0.0"/>
+            <dynamics damping="0.01" friction="0.1"/>
             <limit effort="30" velocity="100" />
         </joint>
         <wheel prefix="bogie_5" />
@@ -179,7 +179,7 @@
             <parent link="drive_module_right_4_link"/>
             <child link="bogie_6_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.01" friction="0.0"/>
+            <dynamics damping="0.01" friction="0.1"/>
             <limit effort="30" velocity="100" />
         </joint>
         <wheel prefix="bogie_6" />

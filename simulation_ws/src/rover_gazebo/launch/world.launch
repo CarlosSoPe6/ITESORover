@@ -6,7 +6,7 @@
     <arg name="headless" default="false"/>
     <arg name="debug" default="false"/>
     <arg name="verbose" default="true" />
-    <arg name="world" default="$(find rover_gazebo)/worlds/mars_curiosity.world"/>
+    <arg name="world" default="$(find rover_gazebo)/worlds/simple.world"/>
 
     <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">

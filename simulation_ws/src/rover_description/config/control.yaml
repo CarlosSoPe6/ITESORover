@@ -2,7 +2,7 @@ iteso_rover:
   # Publisher
   joint_state_controller:
     type: joint_state_controller/JointStateController
-    publish_rate: 30
+    publish_rate: 60
   
   # Rocker bogie controlers
   rocker_bogie_left_controler:
