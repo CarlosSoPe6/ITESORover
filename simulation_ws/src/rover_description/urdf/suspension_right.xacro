@@ -12,12 +12,12 @@
             <inertial>
                 <origin xyz="${rocker_right_mass_center_xyz}" rpy="0.0 0.0 0.0"/>
                 <mass value="${rocker_right_mass}"/>
-                <inertia    ixx="${rocker_right_mass * 0.0206}"
-                            ixy="${rocker_right_mass * 0.0047}"   
-                            ixz="${rocker_right_mass * -0.0030}" 
-                            iyy="${rocker_right_mass * 0.0356}"    
-                            iyz="${rocker_right_mass * 0.0001}"
-                            izz="${rocker_right_mass * 0.0306}"/>
+                <inertia    ixx="${ 0.0206}"
+                            ixy="${ 0.0047}"   
+                            ixz="${ -0.0030}" 
+                            iyy="${ 0.0356}"    
+                            iyz="${ 0.0001}"
+                            izz="${ 0.0306}"/>
             </inertial>
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -40,19 +40,19 @@
             <parent link="rocker_right_link"/>
             <child link="bogie_pivot_right_link"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.01" friction="0.0"/>
+            <dynamics  damping="0.0" friction="0.0"/>
             <limit effort="30" velocity="100" />
         </joint>
         <link name="bogie_pivot_right_link">
             <inertial>
                 <origin xyz="${bogie_pivot_right_mass_center_xyz}" rpy="0.0 0.0 0.0"/>
                 <mass value="${bogie_pivot_right_mass}"/>
-                <inertia    ixx="${bogie_pivot_right_mass * 0.0024}"    
-                            ixy="${bogie_pivot_right_mass * 0.0}"    
-                            ixz="${bogie_pivot_right_mass * -0.002}" 
-                            iyy="${bogie_pivot_right_mass * 0.0061}"    
-                            iyz="${bogie_pivot_right_mass * -0.0006}" 
-                            izz="${bogie_pivot_right_mass * 0.006}"/>
+                <inertia    ixx="${ 0.0024}"    
+                            ixy="${ 0.0}"    
+                            ixz="${ -0.002}" 
+                            iyy="${ 0.0061}"    
+                            iyz="${ -0.0006}" 
+                            izz="${ 0.006}"/>
             </inertial>
             <visual>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
@@ -85,7 +85,7 @@
             <parent link="rocker_right_link"/>
             <child link="drive_module_right_3_link"/>
             <axis xyz="0.0 0.0 1.0"/>
-            <dynamics damping="0.01" friction="0.0"/>
+            <dynamics  damping="0.0" friction="0.0"/>
             <limit effort="30" velocity="100" />
         </joint>
         <module_steerable 
@@ -112,7 +112,7 @@
             <parent link="bogie_pivot_right_link"/>
             <child link="drive_module_right_4_link"/>
             <axis xyz="0.0 0.0 1.0"/>
-            <dynamics damping="0.01" friction="0.0"/>
+            <dynamics  damping="0.0" friction="0.0"/>
             <limit effort="30" velocity="100" />
         </joint>
         <module_steerable 
@@ -139,7 +139,7 @@
             <parent link="drive_module_right_3_link"/>
             <child link="bogie_4_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.01" friction="0.1"/>
+            <dynamics  damping="0.0" friction="0.5"/>
             <limit effort="30" velocity="100" />
         </joint>
         <wheel prefix="bogie_4" />
@@ -159,7 +159,7 @@
             <parent link="bogie_pivot_right_link"/>
             <child link="bogie_5_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.01" friction="0.1"/>
+            <dynamics  damping="0.0" friction="0.5"/>
             <limit effort="30" velocity="100" />
         </joint>
         <wheel prefix="bogie_5" />
@@ -179,7 +179,7 @@
             <parent link="drive_module_right_4_link"/>
             <child link="bogie_6_wheel"/>
             <axis xyz="1.0 0.0 0.0"/>
-            <dynamics damping="0.01" friction="0.1"/>
+            <dynamics  damping="0.0" friction="0.5"/>
             <limit effort="30" velocity="100" />
         </joint>
         <wheel prefix="bogie_6" />
