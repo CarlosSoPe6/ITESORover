@@ -8,18 +8,9 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package()
 
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-)
-
 install(PROGRAMS
-    scripts/wheels_controller.py
+    scripts/WheelsControler.py
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
-
-install(
-  DIRECTORY include/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/include
 )
 
 install(
