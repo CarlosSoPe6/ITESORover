@@ -85,7 +85,7 @@
             <parent link="rocker_right_link"/>
             <child link="drive_module_right_3_link"/>
             <axis xyz="0.0 0.0 1.0"/>
-            <dynamics  damping="0.0" friction="0.0"/>
+            <dynamics  damping="0.0" friction="0.5"/>
             <limit effort="30" velocity="100" />
         </joint>
         <module_steerable 
@@ -112,7 +112,7 @@
             <parent link="bogie_pivot_right_link"/>
             <child link="drive_module_right_4_link"/>
             <axis xyz="0.0 0.0 1.0"/>
-            <dynamics  damping="0.0" friction="0.0"/>
+            <dynamics  damping="0.0" friction="0.5"/>
             <limit effort="30" velocity="100" />
         </joint>
         <module_steerable 
@@ -138,7 +138,7 @@
             <origin xyz="${wheel_right_4_offset}" rpy="${wheel_right_rpy}"/>
             <parent link="drive_module_right_3_link"/>
             <child link="bogie_4_wheel"/>
-            <axis xyz="1.0 0.0 0.0"/>
+            <axis xyz="-1.0 0.0 0.0"/>
             <dynamics  damping="0.0" friction="0.5"/>
             <limit effort="30" velocity="100" />
         </joint>
@@ -146,10 +146,10 @@
         <transmission name="wheel_4_trans">
             <type>transmission_interface/SimpleTransmission</type>
             <joint name="wheel_4_joint">
-                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
             </joint>
             <actuator name="wheel_4_motor">
-                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
         </transmission>
@@ -158,7 +158,7 @@
             <origin xyz="${wheel_right_5_offset}" rpy="${wheel_right_rpy}"/>
             <parent link="bogie_pivot_right_link"/>
             <child link="bogie_5_wheel"/>
-            <axis xyz="1.0 0.0 0.0"/>
+            <axis xyz="-1.0 0.0 0.0"/>
             <dynamics  damping="0.0" friction="0.5"/>
             <limit effort="30" velocity="100" />
         </joint>
@@ -166,10 +166,10 @@
         <transmission name="wheel_5_trans">
             <type>transmission_interface/SimpleTransmission</type>
             <joint name="wheel_5_joint">
-                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
             </joint>
             <actuator name="wheel_5_motor">
-                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
         </transmission>
@@ -178,7 +178,7 @@
             <origin xyz="${wheel_right_6_offset}" rpy="${wheel_right_rpy}"/>
             <parent link="drive_module_right_4_link"/>
             <child link="bogie_6_wheel"/>
-            <axis xyz="1.0 0.0 0.0"/>
+            <axis xyz="-1.0 0.0 0.0"/>
             <dynamics  damping="0.0" friction="0.5"/>
             <limit effort="30" velocity="100" />
         </joint>
@@ -186,10 +186,10 @@
         <transmission name="wheel_6_trans">
             <type>transmission_interface/SimpleTransmission</type>
             <joint name="wheel_6_joint">
-                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
             </joint>
             <actuator name="wheel_6_motor">
-                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
         </transmission>

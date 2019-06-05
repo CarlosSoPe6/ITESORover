@@ -68,7 +68,7 @@ class WheelsController(object):
         while not rospy.is_shutdown():
             for controller_name in ctrl:
                 publisher_obj = self.publishers[controller_name]
-                publisher_obj.publish(5)
+                publisher_obj.publish(10)
             self.rate.sleep()
         pass
 
