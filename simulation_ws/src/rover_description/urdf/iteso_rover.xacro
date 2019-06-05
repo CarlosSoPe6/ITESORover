@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot name="iteso_rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- Properties -->
+    <xacro:include filename="$(find rover_description)/urdf/iteso_rover_properies.xacro" />
+    <!-- Chassis -->
+    <xacro:include filename="$(find rover_description)/urdf/chassis.xacro" />
+    <!-- Left suspension -->
+    <xacro:include filename="$(find rover_description)/urdf/suspension_left.xacro" />
+    <!-- Right suspension -->
+    <xacro:include filename="$(find rover_description)/urdf/suspension_right.xacro" />
+    <!-- Wheel -->
+    <xacro:include filename="$(find rover_description)/urdf/wheel.xacro" />
+    <!-- Module Steerable -->
+    <xacro:include filename="$(find rover_description)/urdf/drive_module_steerable.xacro"/>
+
+    <!-- Macros calls -->
+    <chassis />
+    <suspension_left />
+    <suspension_right />
+
+    <!-- Gazebo aspects of the robot -->
+    <xacro:include filename="$(find rover_description)/urdf/iteso_rover.xml"/>
+
+</robot>

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<robot>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/iteso_rover</robotNamespace>
+      <robotParam>/robot_description</robotParam>
+    </plugin>
+  </gazebo>
+
+  <!-- Chasis -->
+  <gazebo reference="chasis_joint">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <!-- Left suspenstion tree -->
+  <gazebo reference="rocker_left_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_pivot_left_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="drive_module_left_1_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="drive_module_left_2_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_1_wheel">
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_2_wheel">
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_3_wheel">
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <!-- Right suspenstion tree -->
+  <gazebo reference="rocker_right_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_pivot_right_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="drive_module_right_3_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="drive_module_right_4_link">
+    <mu1>0.3</mu1>
+    <mu2>0.3</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_4_wheel">
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_5_wheel">
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="bogie_6_wheel">
+    <mu1>0.9</mu1>
+    <mu2>0.9</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+</robot>

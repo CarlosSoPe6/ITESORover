@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="chassis" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="chassis" params="">
+        <!-- Used to link base_link to chassis_link -->
+        <link name="base_link" />
+        <joint name="chasis_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="chassis_link"/>
+        </joint>
+
+        <!-- Chassis link -->
+        <link name="chassis_link">
+            <inertial>
+                <origin xyz="${chassis_mass_center_xyz}" rpy="0.0 0.0 0.0"/>
+                <mass value="${chassis_mass}"/>
+                <inertia    ixx="${ 0.0860}"    
+                            ixy="${ -0.0008}"   
+                            ixz="${ -0.0003}" 
+                            iyy="${ 0.0483}"    
+                            iyz="${ -0.0099}" 
+                            izz="${ 0.0994}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <mesh filename="package://rover_description/meshes/Main Bodyy.STL" scale="${SCALE_XYZ}"/>
+                </geometry>
+                <material name="white"/>
+            </visual>
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <mesh filename="package://rover_description/meshes/Main Bodyy.STL" scale="${SCALE_XYZ}"/>
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+</robot>

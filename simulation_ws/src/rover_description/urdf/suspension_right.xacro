@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<robot name="suspension_right" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="suspension_right" params="">
+    
+        <joint name="suspension_rigth_tree_root_joint" type="fixed">
+            <origin xyz="${rocker_right_offset}" rpy="0.0 0.0 0.0"/>
+            <parent link="chassis_link"/>
+            <child link="rocker_right_link"/>
+            <axis xyz="1.0 0.0 0.0"/>
+        </joint>
+        <link name="rocker_right_link">
+            <inertial>
+                <origin xyz="${rocker_right_mass_center_xyz}" rpy="0.0 0.0 0.0"/>
+                <mass value="${rocker_right_mass}"/>
+                <inertia    ixx="${ 0.0206}"
+                            ixy="${ 0.0047}"   
+                            ixz="${ -0.0030}" 
+                            iyy="${ 0.0356}"    
+                            iyz="${ 0.0001}"
+                            izz="${ 0.0306}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <mesh filename="package://rover_description/meshes/MirrorRocker.STL" scale="${SCALE_XYZ}"/>
+                </geometry>
+                <material name="white">
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <mesh filename="package://rover_description/meshes/MirrorRocker.STL" scale="${SCALE_XYZ}"/>
+                </geometry>
+            </collision>
+        </link>
+
+        <joint name="rocker_bogie_right_joint" type="continuous">
+            <origin xyz="${bogie_pivot_right_offset}" rpy="0.0 0.0 0.0"/>
+            <parent link="rocker_right_link"/>
+            <child link="bogie_pivot_right_link"/>
+            <axis xyz="1.0 0.0 0.0"/>
+            <dynamics  damping="0.0" friction="0.0"/>
+            <limit effort="30" velocity="100" />
+        </joint>
+        <link name="bogie_pivot_right_link">
+            <inertial>
+                <origin xyz="${bogie_pivot_right_mass_center_xyz}" rpy="0.0 0.0 0.0"/>
+                <mass value="${bogie_pivot_right_mass}"/>
+                <inertia    ixx="${ 0.0024}"    
+                            ixy="${ 0.0}"    
+                            ixz="${ -0.002}" 
+                            iyy="${ 0.0061}"    
+                            iyz="${ -0.0006}" 
+                            izz="${ 0.006}"/>
+            </inertial>
+            <visual>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <mesh filename="package://rover_description/meshes/MirrorBogie_pivot.STL" scale="${SCALE_XYZ}"/>
+                </geometry>
+                <material name="white">
+                </material>
+            </visual>
+            <collision>
+                <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+                <geometry>
+                    <mesh filename="package://rover_description/meshes/MirrorBogie_pivot.STL" scale="${SCALE_XYZ}"/>
+                </geometry>
+            </collision>
+        </link>
+        <transmission name="rocker_bogie_right_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="rocker_bogie_right_joint">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="rocker_bogie_right_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <joint name="bogie_drive_3_joint" type="continuous">
+            <origin xyz="${drive_module_right_3_offset}" rpy="0.0 0.0 0.0"/>
+            <parent link="rocker_right_link"/>
+            <child link="drive_module_right_3_link"/>
+            <axis xyz="0.0 0.0 1.0"/>
+            <dynamics  damping="0.0" friction="0.0"/>
+            <limit effort="30" velocity="100" />
+        </joint>
+        <module_steerable 
+            name="drive_module_right_3_link"
+            mass="${drive_module_right_mass}"
+            mass_center="${drive_module_right_mass_center_xyz}"
+            origin_xyz="${drive_module_right_3_origin}"
+            origin_rpy="${drive_module_right_rpy}"
+            mesh_filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL"
+        />
+        <transmission name="bogie_drive_3_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="bogie_drive_3_joint">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="bogie_drive_3_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <joint name="bogie_drive_4_joint" type="continuous">
+            <origin xyz="${drive_module_right_4_offset}" rpy="0.0 0.0 0.0"/>
+            <parent link="bogie_pivot_right_link"/>
+            <child link="drive_module_right_4_link"/>
+            <axis xyz="0.0 0.0 1.0"/>
+            <dynamics  damping="0.0" friction="0.0"/>
+            <limit effort="30" velocity="100" />
+        </joint>
+        <module_steerable 
+            name="drive_module_right_4_link"
+            mass="${drive_module_right_mass}"
+            mass_center="${drive_module_right_mass_center_xyz}"
+            origin_xyz="${drive_module_right_4_origin}"
+            origin_rpy="${drive_module_right_rpy}"
+            mesh_filename="package://rover_description/meshes/MirrorDrive Module_steerable.STL"
+        />
+        <transmission name="bogie_drive_4_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="bogie_drive_4_joint">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="bogie_drive_4_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <joint name="wheel_4_joint" type="continuous">
+            <origin xyz="${wheel_right_4_offset}" rpy="${wheel_right_rpy}"/>
+            <parent link="drive_module_right_3_link"/>
+            <child link="bogie_4_wheel"/>
+            <axis xyz="1.0 0.0 0.0"/>
+            <dynamics  damping="0.0" friction="0.5"/>
+            <limit effort="30" velocity="100" />
+        </joint>
+        <wheel prefix="bogie_4" />
+        <transmission name="wheel_4_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="wheel_4_joint">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="wheel_4_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+        
+        <joint name="wheel_5_joint" type="continuous">
+            <origin xyz="${wheel_right_5_offset}" rpy="${wheel_right_rpy}"/>
+            <parent link="bogie_pivot_right_link"/>
+            <child link="bogie_5_wheel"/>
+            <axis xyz="1.0 0.0 0.0"/>
+            <dynamics  damping="0.0" friction="0.5"/>
+            <limit effort="30" velocity="100" />
+        </joint>
+        <wheel prefix="bogie_5" />
+        <transmission name="wheel_5_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="wheel_5_joint">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="wheel_5_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+        
+        <joint name="wheel_6_joint" type="continuous">
+            <origin xyz="${wheel_right_6_offset}" rpy="${wheel_right_rpy}"/>
+            <parent link="drive_module_right_4_link"/>
+            <child link="bogie_6_wheel"/>
+            <axis xyz="1.0 0.0 0.0"/>
+            <dynamics  damping="0.0" friction="0.5"/>
+            <limit effort="30" velocity="100" />
+        </joint>
+        <wheel prefix="bogie_6" />
+        <transmission name="wheel_6_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="wheel_6_joint">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="wheel_6_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+    </xacro:macro>
+</robot>
